@@ -38,7 +38,9 @@ In CSS, the [`fit-content`](https://drafts.csswg.org/css-sizing-3/#funcdef-width
 </div>
 ```
 
-Both the outer div and the inner div have the same width おｆ, 320px. The text is wrapped within 320px, so the right edge of the text typically does not align with the right edge of the inner div.
+Both the outer div and the inner div have the same width of 320px.
+The text is wrapped within 320px, so the right edge of the text typically does not align with the right edge of the inner div.
+We want to align the right edges of these.
 
 <img src="images/shrink-to-fit-current.png" width=337>
 
