@@ -38,7 +38,7 @@ In CSS, the [`fit-content`](https://drafts.csswg.org/css-sizing-3/#funcdef-width
 </div>
 ```
 
-Both of the outer div and the inner div have the same width, 320px. The text is wrapped within 320px, so the right edge of the text is not aligned to the right edge of the divs typically.
+Both the outer div and the inner div have the same width おｆ, 320px. The text is wrapped within 320px, so the right edge of the text typically does not align with the right edge of the inner div.
 
 <img src="images/shrink-to-fit-current.png" width=337>
 
@@ -53,11 +53,12 @@ The proposal defines a new CSS property applicable to block containers to contro
 
 `auto` - The default behavior. Under this mode, the element behaves standardly: text elements calculate their max-content size based on the length of the unwrapped inline text string.
 
-`shrink-to-fit` - This value alters [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) of the element and descendants.
-* If the element is an **inline formatting context**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
-* If the element is a **block formatting context**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the inline size of the widest child block.
-* If the element is a **flex container with `flex-wrap:wrap`**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
-* Otherwise, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) is not altered.
+`shrink-to-fit` - This value alters the [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) of the element and descendants.
+
+* If the element is an **inline formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* If the element is a **block formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the inline size of the widest child block.
+* If the element is a **flex container with `flex-wrap:wrap`**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* Otherwise, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) is not altered.
 
 
 The physical calculation for an inline formatting context resolves as follows:
