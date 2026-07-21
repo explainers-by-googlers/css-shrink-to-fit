@@ -6,34 +6,6 @@ feedback on the proposed solution. It has not been approved to ship in Chrome.
 ## Participate
 - https://github.com/w3c/csswg-drafts/issues/191
 
-## Table of Contents
-
-<!-- Update this table of contents by running `npx doctoc README.md` -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Introduction](#introduction)
-- [Goals](#goals)
-- [Non-goals](#non-goals)
-- [User research](#user-research)
-- [Use cases](#use-cases)
-  - [Use case 1](#use-case-1)
-  - [Use case 2](#use-case-2)
-- [[Potential Solution]](#potential-solution)
-  - [How this solution would solve the use cases](#how-this-solution-would-solve-the-use-cases)
-    - [Use case 1](#use-case-1-1)
-    - [Use case 2](#use-case-2-1)
-- [Detailed design discussion](#detailed-design-discussion)
-  - [[Tricky design choice #1]](#tricky-design-choice-1)
-  - [[Tricky design choice 2]](#tricky-design-choice-2)
-- [Considered alternatives](#considered-alternatives)
-  - [[Alternative 1]](#alternative-1)
-  - [[Alternative 2]](#alternative-2)
-- [Security and Privacy Considerations](#security-and-privacy-considerations)
-- [Stakeholder Feedback / Opposition](#stakeholder-feedback--opposition)
-- [References & acknowledgements](#references--acknowledgements)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
 
@@ -82,13 +54,13 @@ The proposal defines a new CSS property applicable to block containers to contro
 `auto` - The default behavior. Under this mode, the element behaves standardly: text elements calculate their max-content size based on the length of the unwrapped inline text string.
 
 `shrink-to-fit` - This value alters [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) of the element and descendants.
-* If the element is an inline formatting context, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the fit-content inline size.
-* If the element is a block formatting context, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the inline size of the widest child block.
-* If the element is a flex container with flex-wrap:wrap, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the fit-content inline size.
+* If the element is an **inline formatting context**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* If the element is a **block formatting context**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the inline size of the widest child block.
+* If the element is a **flex container with `flex-wrap:wrap`**, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
 * Otherwise, [max content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) is not altered.
 
 
-The physical calculation resolves as follows:
+The physical calculation for an inline formatting context resolves as follows:
 1. Compute a hypothetical reference size based on the element's computed [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
 1. Perform line-breaking layout operations of the text children or the flex items within this hypothetical size.
 1. Evaluate the resolved layout and use the maximum inline size measured across all generated lines, explicitly excluding any trailing whitespaces on each line.
