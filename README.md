@@ -64,6 +64,8 @@ In CSS, the `fit-content` keyword is often used to size block containers dynamic
 
 Both of the outer div and the inner div have the same width, 320px. The text is wrapped within 320px, so the right edge of the text is not aligned to the right edge of the divs typically.
 
+<img src="images/shrink-to-fit-current.png" width=337>
+
 ## Proposal: The `max-content-sizing` Property
 
 The proposal defines a new CSS property applicable to block containers to control how max-content inline sizes are calculated.
@@ -105,6 +107,8 @@ Because the property changes the behavior of max-content inline size, it affects
 </div>
 ```
 Both of the outer div and the inner div have the same width, which is the widest line width.
+
+<img src="images/shrink-to-fit-future.png" width=282>
 
 
 ## Detailed design discussion
