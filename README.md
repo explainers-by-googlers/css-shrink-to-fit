@@ -101,6 +101,7 @@ Both of the outer div and the inner div have the same width, which is the widest
 
 * Naming of the property and its keywords.
 * How to handle containers containing `float:right` elements
+* Should expand the width for overflowing content?
 
 ## Considered alternatives
 
