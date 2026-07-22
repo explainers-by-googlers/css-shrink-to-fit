@@ -57,9 +57,8 @@ The proposal defines a new CSS property applicable to block containers to contro
 
 `shrink-to-fit` - This value alters the [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) of the element and descendants.
 
-* If the element is an **inline formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
-* If the element is a **block formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the inline size of the widest child block.
-* If the element is a **flex container with `flex-wrap:wrap`**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* If the container is an **inline formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* If the container is a **flex container with `flex-wrap:wrap`**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
 * Otherwise, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) is not altered.
 
 
