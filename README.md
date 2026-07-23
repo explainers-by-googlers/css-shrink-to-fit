@@ -46,7 +46,7 @@ We want to align the right edges of these.
 
 ## Proposal: The `max-content-sizing` Property
 
-The proposal defines a new CSS property applicable to block containers to control how [max-content inline sizes](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) are calculated.
+The proposal defines a new CSS property applicable to block containers and flex containers to control how [max-content inline sizes](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) are calculated.
 
 * Name: `max-content-sizing`
 * Values: `auto | shrink-to-fit`
