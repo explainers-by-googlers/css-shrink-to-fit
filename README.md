@@ -57,13 +57,13 @@ The proposal defines a new CSS property applicable to block containers and flex 
 
 `shrink-to-fit` - This value alters the [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) of the element and descendants.
 
-* If the container is an **inline formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
-* If the container is a **flex container with `flex-wrap:wrap`**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+* If the container is an **inline formatting context**, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size) with infinite max-content size.
+* If the container is a [**multi-line flex container**](https://drafts.csswg.org/css-flexbox-2/#multi-line-flex-container), [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) would be the widest flex line content wrapped within the [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size) with infinite max-content size.
 * Otherwise, [max-content inline size](https://drafts.csswg.org/css-sizing-3/#max-content-inline-size) is not altered.
 
 
 The physical calculation for an inline formatting context resolves as follows:
-1. Compute a hypothetical reference size based on the element's computed [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size).
+1. Compute a hypothetical reference size based on the element's computed [fit-content inline size](https://drafts.csswg.org/css-sizing-3/#fit-content-inline-size) with infinite max-content size.
 1. Perform line-breaking layout operations of the text children or the flex items within this hypothetical size.
 1. Evaluate the resolved layout and use the maximum inline size measured across all generated lines, explicitly excluding any trailing whitespaces on each line.
 
